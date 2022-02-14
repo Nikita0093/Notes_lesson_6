@@ -25,7 +25,7 @@ public class Notes implements Parcelable {
     };
 
     public Notes(String notesName, String notesDescription) {
-        this.notesDescription =notesDescription;
+        this.notesDescription = notesDescription;
         this.notesName = notesName;
     }
 
@@ -56,3 +56,4 @@ public class Notes implements Parcelable {
         parcel.writeString(notesDescription);
     }
 }
+

@@ -9,10 +9,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class NotesDescription extends Fragment {
     public static final String Args_Note_Names = "note_names";
-    private Notes_Names notes_names;
+    private Notes notes;
 
     public static NotesDescription newInstance(Notes Note_Names) {
         NotesDescription fragment = new NotesDescription();
@@ -30,7 +31,9 @@ public class NotesDescription extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        notes_names = getArguments().getParcelable(Args_Note_Names);
+        notes = getArguments().getParcelable(Args_Note_Names);
+        TextView textView = view.findViewById(R.id.text_description);
+        textView.setText(notes.getNotesDescription());
 
 
     }
