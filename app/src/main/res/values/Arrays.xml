@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Notes_Names">
+        <item>Note One</item>
+        <item>Note Two</item>
+        <item>Note Three</item>
+        <item>Note Four</item>
+        <item>Note Five</item>
+    </string-array>
+
+<string-array name="Notes_Description">
+    <item>Info Note One</item>
+    <item>Info Note Two</item>
+    <item>Info Note Three</item>
+    <item>Info Note Four</item>
+    <item>Info Note Five</item>
+
+</string-array>
+
+
+</resources>

@@ -4,13 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-    <FrameLayout
-        android:id="@+id/Names"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </FrameLayout>
+    android:background="@color/teal_700"
+    tools:context=".Notes_Names">
 
 
 
