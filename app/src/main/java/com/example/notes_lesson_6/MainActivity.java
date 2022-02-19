@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
             Notes_Names notes_names = Notes_Names.newInstance();
             getSupportFragmentManager().beginTransaction().replace(R.id.Names, notes_names).commit();
             if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                Notes defaultName = new Notes("Note One", "Info Note One");
+                Notes defaultName = new Notes(0);
                 NotesDescription notes_Description = NotesDescription.newInstance(defaultName);
                 getSupportFragmentManager().beginTransaction().replace(R.id.Description, notes_Description).commit();
 
