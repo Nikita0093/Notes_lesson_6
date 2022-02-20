@@ -7,7 +7,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-    private Notes currentNote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Fragment backStackFragment = (Fragment) getSupportFragmentManager().findFragmentById(R.id.Names);
         if (backStackFragment != null && backStackFragment instanceof NotesDescription) {
-            onBackPressed();
+            getSupportFragmentManager().popBackStack();
         }
     }
 }
