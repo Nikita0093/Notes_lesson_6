@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Folders">
+        <item>Основные</item>
+        <item>Заметки</item>
+        <item>Пароли</item>
+    </string-array>
+</resources>

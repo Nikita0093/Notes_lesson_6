@@ -1,10 +1,13 @@
 package com.example.notes_lesson_6;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -52,13 +55,14 @@ public class Notes_Names extends Fragment {
     }
 
 
+
     private void initView(LinearLayout view) {
-        String[] noteNames = getResources().getStringArray(R.array.Notes_Names);
+        String[] noteNames = getResources().getStringArray(R.array.Folders);
         for (int a = 0; a < noteNames.length; a++) {
             String noteName = noteNames[a];
             TextView textView = new TextView(getContext());
             textView.setText(noteName);
-            textView.setTextSize(30f);
+            textView.setTextSize(40f);
             view.addView(textView);
             final int finalA = a;
             textView.setOnClickListener(new View.OnClickListener() {
