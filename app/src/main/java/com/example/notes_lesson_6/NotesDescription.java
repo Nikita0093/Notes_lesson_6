@@ -1,6 +1,5 @@
 package com.example.notes_lesson_6;
 
-import android.content.res.TypedArray;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,10 +9,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import java.lang.reflect.Array;
 
 public class NotesDescription extends Fragment {
     public static final String Args_Note_Names = "note_names";
@@ -36,7 +31,7 @@ public class NotesDescription extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         notes = getArguments().getParcelable(Args_Note_Names);
-        getChildFragmentManager().beginTransaction().replace(R.id.container_notes_description_child,NotesDescription_Child.newInstance(notes)).addToBackStack("").commit();
+        getChildFragmentManager().beginTransaction().replace(R.id.container_notes_description_child, NotesDescriptionChild.newInstance(notes)).addToBackStack("").commit();
 
     }
 }

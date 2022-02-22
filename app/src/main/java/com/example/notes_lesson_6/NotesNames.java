@@ -1,13 +1,10 @@
 package com.example.notes_lesson_6;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -17,19 +14,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-public class Notes_Names extends Fragment {
+public class NotesNames extends Fragment {
     public static final String CURRENT_NOTE = "Current_note";
     private Notes currentNote;
 
-    public static Notes_Names newInstance() {
-        Notes_Names fragment = new Notes_Names();
+    public static NotesNames newInstance() {
+        NotesNames fragment = new NotesNames();
 
         return fragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_notes__names, container, false);
+        return inflater.inflate(R.layout.fragment_notes_names, container, false);
     }
 
     @Override
@@ -55,14 +52,14 @@ public class Notes_Names extends Fragment {
     }
 
 
-
     private void initView(LinearLayout view) {
-        String[] noteNames = getResources().getStringArray(R.array.Folders);
+        String[] noteNames = getResources().getStringArray(R.array.Notes_Names);
         for (int a = 0; a < noteNames.length; a++) {
             String noteName = noteNames[a];
             TextView textView = new TextView(getContext());
             textView.setText(noteName);
             textView.setTextSize(40f);
+            textView.setTextColor(getResources().getColor(R.color.white));
             view.addView(textView);
             final int finalA = a;
             textView.setOnClickListener(new View.OnClickListener() {

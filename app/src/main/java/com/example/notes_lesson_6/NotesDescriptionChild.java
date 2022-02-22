@@ -10,12 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class NotesDescription_Child extends Fragment {
+public class NotesDescriptionChild extends Fragment {
     public static final String Args_Note_Names = "note_names";
     private Notes notes;
 
-    public static NotesDescription_Child newInstance(Notes notes) {
-        NotesDescription_Child fragment = new NotesDescription_Child();
+    public static NotesDescriptionChild newInstance(Notes notes) {
+        NotesDescriptionChild fragment = new NotesDescriptionChild();
         Bundle bundle = new Bundle();
         bundle.putParcelable(Args_Note_Names, notes);
         fragment.setArguments(bundle);

@@ -5,4 +5,10 @@
         <item>Заметки</item>
         <item>Пароли</item>
     </string-array>
+
+    <string-array name="Folders_Name">
+        <item>Main</item>
+        <item>Notes</item>
+        <item>Passwords</item>
+    </string-array>
 </resources>

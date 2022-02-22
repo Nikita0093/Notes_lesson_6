@@ -3,7 +3,6 @@ package com.example.notes_lesson_6;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.res.Configuration;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
-            Notes_Names notes_names = Notes_Names.newInstance();
+            NotesNames notes_names = NotesNames.newInstance();
             getSupportFragmentManager().beginTransaction().replace(R.id.Names, notes_names).commit();
         }
     }
