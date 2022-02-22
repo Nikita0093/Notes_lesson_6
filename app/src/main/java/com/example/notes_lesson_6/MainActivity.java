@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
-            NotesNames notes_names = NotesNames.newInstance();
-            getSupportFragmentManager().beginTransaction().replace(R.id.Names, notes_names).commit();
+            NotesFolders notes_folders = NotesFolders.newInstance();
+            getSupportFragmentManager().beginTransaction().replace(R.id.Names, notes_folders).commit();
         }
     }
 
