@@ -3,13 +3,16 @@ package com.example.notes_lesson_6;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.fragment.app.Fragment;
 
 
@@ -52,6 +55,36 @@ public class NotesFolders extends Fragment {
             textView.setTextSize(40f);
             textView.setTextColor(getResources().getColor(R.color.white));
             view.addView(textView);
+            textView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    PopupMenu popupMenuFolder = new PopupMenu(requireContext(), view);
+                    requireActivity().getMenuInflater().inflate(R.menu.popup_folder, popupMenuFolder.getMenu());
+                    popupMenuFolder.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            switch (item.getItemId()) {
+                                case (R.id.action_popup_folder_delete): {
+                                    Toast.makeText(requireContext(), "Folder's deleted", Toast.LENGTH_SHORT).show();//TODO дописать логику удаления всей заметки
+                                    break;
+
+                                }
+                                case (R.id.action_popup_folder_clear): {
+                                    Toast.makeText(requireContext(), "Folder's cleared", Toast.LENGTH_SHORT).show(); //TODO дописать логику отчистки содержимого  заметки
+                                    break;
+                                }
+
+                            }
+
+                            return false;
+                        }
+
+                    });
+                    popupMenuFolder.show();
+
+                    return false;
+                }
+            });
             final int finalA = b;
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override

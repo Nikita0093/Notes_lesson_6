@@ -7,6 +7,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +44,7 @@ public class NotesDescriptionChild extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_notes_descriptionchild, container, false);
@@ -56,5 +58,37 @@ public class NotesDescriptionChild extends Fragment {
         TextView textView = view.findViewById(R.id.text_description);
         String[] Description = getResources().getStringArray(R.array.Notes_Description);
         textView.setText(Description[notes.getIndex()]);
+        popupMenu(textView);
+    }
+
+    private void popupMenu(TextView textView) {
+        textView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                PopupMenu popupMenuChild = new PopupMenu(requireContext(), view);
+                requireActivity().getMenuInflater().inflate(R.menu.popup_description_child, popupMenuChild.getMenu());
+                popupMenuChild.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        switch (menuItem.getItemId()) {
+                            case (R.id.action_popup_delete): {
+                                Toast.makeText(requireContext(), "This note's deleted", Toast.LENGTH_LONG).show();//TODO дописать логику удаления всей заметки
+                                break;
+
+                            }
+                            case (R.id.action_popup_clear): {
+                                Toast.makeText(requireContext(), "Note Info's cleared", Toast.LENGTH_LONG).show(); //TODO дописать логику отчистки содержимого  заметки
+                                break;
+                            }
+
+                        }
+                        return false;
+                    }
+                });
+                popupMenuChild.show();
+
+                return false;
+            }
+        });
     }
 }

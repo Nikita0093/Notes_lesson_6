@@ -3,4 +3,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="created_by_n_d">Created by N.D.</string>
     <string name="notes">App: Notes</string>
+    <string name="clear">Clear</string>
+    <string name="delete">Delete</string>
 </resources>
