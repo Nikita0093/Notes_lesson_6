@@ -23,18 +23,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case (R.id.action_about):{
-                getSupportFragmentManager().beginTransaction().replace(R.id.Names, new About()).commit();
+        switch (item.getItemId()) {
+            case (R.id.action_about): {
+                getSupportFragmentManager().beginTransaction().replace(R.id.Names, new About()).addToBackStack("").commit();
                 break;
             }
-            case (R.id.action_exit):{
+            case (R.id.action_exit): {
                 finish();
                 break;
             }

@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blue_feathers">
+    android:background="@drawable/sweden">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/About_Name"
         android:layout_width="200sp"
         android:layout_height="50sp"
         android:gravity="center"
         android:text="@string/notes"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/about"
+        app:layout_constraintBottom_toTopOf="@+id/About_Creator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,12 +22,12 @@
         app:layout_constraintVertical_bias="0.05" />
 
     <TextView
-        android:id="@+id/about"
+        android:id="@+id/About_Creator"
         android:layout_width="200sp"
         android:layout_height="50sp"
         android:gravity="center"
         android:text="@string/created_by_n_d"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
