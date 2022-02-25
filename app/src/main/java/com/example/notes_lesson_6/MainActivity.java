@@ -1,9 +1,12 @@
 package com.example.notes_lesson_6;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +19,26 @@ public class MainActivity extends AppCompatActivity {
             NotesFolders notes_folders = NotesFolders.newInstance();
             getSupportFragmentManager().beginTransaction().replace(R.id.Names, notes_folders).commit();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case (R.id.action_about):{
+                return true;
+            }
+            case (R.id.action_exit):{
+                finish();
+            }
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
