@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Notes_lesson_6</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="created_by_n_d">Created by N.D.</string>
+    <string name="notes">Notes</string>
 </resources>

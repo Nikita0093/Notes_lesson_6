@@ -31,10 +31,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case (R.id.action_about):{
-                return true;
+                getSupportFragmentManager().beginTransaction().replace(R.id.Names, new About()).commit();
+                break;
             }
             case (R.id.action_exit):{
                 finish();
+                break;
             }
 
         }
