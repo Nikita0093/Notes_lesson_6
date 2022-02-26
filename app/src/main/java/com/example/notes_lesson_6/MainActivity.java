@@ -2,6 +2,7 @@ package com.example.notes_lesson_6;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
@@ -19,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
             NotesFolders notes_folders = NotesFolders.newInstance();
             getSupportFragmentManager().beginTransaction().replace(R.id.Names, notes_folders).commit();
         }
+        Toolbar toolbar = findViewById(R.id.Toolbar);
+        setSupportActionBar(toolbar);
+
     }
 
     @Override

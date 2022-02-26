@@ -8,6 +8,22 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/Toolbar"
+            app:title="MyNotes"
+            app:titleTextColor="@color/white">
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
     <LinearLayout
         android:id="@+id/Names"
         android:layout_width="match_parent"

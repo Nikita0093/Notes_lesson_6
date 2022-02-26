@@ -55,36 +55,7 @@ public class NotesFolders extends Fragment {
             textView.setTextSize(40f);
             textView.setTextColor(getResources().getColor(R.color.white));
             view.addView(textView);
-            textView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
-                    PopupMenu popupMenuFolder = new PopupMenu(requireContext(), view);
-                    requireActivity().getMenuInflater().inflate(R.menu.popup_folder, popupMenuFolder.getMenu());
-                    popupMenuFolder.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                        @Override
-                        public boolean onMenuItemClick(MenuItem item) {
-                            switch (item.getItemId()) {
-                                case (R.id.action_popup_folder_delete): {
-                                    Toast.makeText(requireContext(), "Folder's deleted", Toast.LENGTH_SHORT).show();//TODO дописать логику удаления всей заметки
-                                    break;
-
-                                }
-                                case (R.id.action_popup_folder_clear): {
-                                    Toast.makeText(requireContext(), "Folder's cleared", Toast.LENGTH_SHORT).show(); //TODO дописать логику отчистки содержимого  заметки
-                                    break;
-                                }
-
-                            }
-
-                            return false;
-                        }
-
-                    });
-                    popupMenuFolder.show();
-
-                    return false;
-                }
-            });
+            popupMenuFolder(textView);
             final int finalA = b;
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -99,6 +70,39 @@ public class NotesFolders extends Fragment {
                 }
             });
         }
+    }
+
+    private void popupMenuFolder(TextView textView) {
+        textView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                PopupMenu popupMenuFolder = new PopupMenu(requireContext(), view);
+                requireActivity().getMenuInflater().inflate(R.menu.popup_folder, popupMenuFolder.getMenu());
+                popupMenuFolder.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case (R.id.action_popup_folder_delete): {
+                                Toast.makeText(requireContext(), "Folder's deleted", Toast.LENGTH_SHORT).show();//TODO дописать логику удаления всей заметки
+                                break;
+
+                            }
+                            case (R.id.action_popup_folder_clear): {
+                                Toast.makeText(requireContext(), "Folder's cleared", Toast.LENGTH_SHORT).show(); //TODO дописать логику отчистки содержимого  заметки
+                                break;
+                            }
+
+                        }
+
+                        return false;
+                    }
+
+                });
+                popupMenuFolder.show();
+
+                return false;
+            }
+        });
     }
 
     private void showPortrait() {
