@@ -1,13 +1,17 @@
 package com.example.notes_lesson_6;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,16 +37,23 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
         switch (item.getItemId()) {
             case (R.id.action_about): {
                 getSupportFragmentManager().beginTransaction().replace(R.id.Names, new About()).addToBackStack("").commit();
                 break;
             }
             case (R.id.action_exit): {
-                finish();
+                new AlertDialog.Builder(this)
+                        .setTitle("Exiting")
+                        .setMessage("Do you want to exit?")
+                        .setPositiveButton("Yes", (dialogInterface, i) -> finish())
+                        .setNegativeButton("No", (dialogInterface, i) -> {
+                            Toast.makeText(this, "Cancel", Toast.LENGTH_SHORT).show();
+
+                        }).show();
                 break;
             }
-
         }
         return super.onOptionsItemSelected(item);
     }
