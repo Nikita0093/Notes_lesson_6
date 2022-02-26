@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class NotesNames extends Fragment {
@@ -49,6 +51,16 @@ public class NotesNames extends Fragment {
 
         }
         initView((LinearLayout) view);
+        view.findViewById(R.id.add_note).setOnClickListener(view1 -> new AlertDialog.Builder(requireContext())
+                .setTitle("Note creation")
+                .setMessage("Do you want to create a new note?")
+                .setPositiveButton("Yes", (dialogInterface, i) -> {
+                    Toast.makeText(requireContext(), "New Note's created", Toast.LENGTH_SHORT).show(); //TODO Дописать логику создания заметки
+                })
+                .setNegativeButton("No", (dialogInterface, i) -> {
+                    Toast.makeText(requireContext(), "Cancel", Toast.LENGTH_SHORT).show();
+
+                }).show());
     }
 
 

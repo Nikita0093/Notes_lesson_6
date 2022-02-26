@@ -8,6 +8,7 @@
     tools:context=".NotesNames">
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/add_folder"
         android:layout_width="100sp"
         android:layout_height="110sp"
         android:layout_gravity="end"

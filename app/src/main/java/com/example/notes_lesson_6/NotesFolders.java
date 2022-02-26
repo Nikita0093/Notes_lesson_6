@@ -1,17 +1,20 @@
 package com.example.notes_lesson_6;
 
+import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.fragment.app.Fragment;
 
@@ -41,8 +44,19 @@ public class NotesFolders extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         currentFolder = new Notes(0);
-
         initView((LinearLayout) view);
+
+        view.findViewById(R.id.add_folder).setOnClickListener(view1 -> new AlertDialog.Builder(requireContext())
+                .setTitle("Folder creation")
+                .setMessage("Do you want to create a new folder?")
+                .setPositiveButton("Yes", (dialogInterface, i) -> {
+                    Toast.makeText(requireContext(), "New Folder's created", Toast.LENGTH_SHORT).show(); //TODO Дописать логику создания папки
+                })
+                .setNegativeButton("No", (dialogInterface, i) -> {
+                    Toast.makeText(requireContext(), "Cancel", Toast.LENGTH_SHORT).show();
+
+                }).show());
+
     }
 
 
