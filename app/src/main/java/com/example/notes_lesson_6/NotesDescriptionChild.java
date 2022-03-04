@@ -1,5 +1,10 @@
 package com.example.notes_lesson_6;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -13,11 +18,14 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
 public class NotesDescriptionChild extends Fragment {
     public static final String Args_Note_Names = "note_names";
     private Notes notes;
+    public final String CHANNEL_ID = "1";
 
     public static NotesDescriptionChild newInstance(Notes notes) {
         NotesDescriptionChild fragment = new NotesDescriptionChild();
@@ -37,7 +45,19 @@ public class NotesDescriptionChild extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case (R.id.action_Share): {
-                Toast.makeText(requireContext(), "Sharing", Toast.LENGTH_LONG).show();
+                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(requireContext());
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, "Channel One", NotificationManager.IMPORTANCE_HIGH);
+                    notificationChannel.setDescription("This is Channel One");
+                    notificationManager.createNotificationChannel(notificationChannel);
+                }
+                Notification notification = new NotificationCompat.Builder(requireContext(), CHANNEL_ID)
+                        .setContentTitle("Let's Sharing")
+                        .setContentText("You've Shared")
+                        .setPriority(Notification.PRIORITY_HIGH)
+                        .setSmallIcon(R.drawable.ic_launcher_foreground)
+                        .build();
+                notificationManager.notify(1, notification);
                 break;
             }
         }
