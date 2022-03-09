@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
-            NotesFolders notes_folders = NotesFolders.newInstance();
-            getSupportFragmentManager().beginTransaction().replace(R.id.Names, notes_folders).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.Names, NotesFolders.newInstance()).commit();
         }
         Toolbar toolbar = findViewById(R.id.Toolbar);
         setSupportActionBar(toolbar);

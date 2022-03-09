@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="Folders">
-        <item>Notes</item>
+        <item>My Notes</item>
+        <item> My Passwords</item>
+        <item>Trash</item>
     </string-array>
 </resources>
