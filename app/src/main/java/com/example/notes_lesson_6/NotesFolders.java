@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class NotesFolders extends Fragment {
+public class NotesFolders extends Fragment implements OnClickItemListener {
     NotesFolderAdapter notesFolderAdapter;
     public static final String CURRENT_FOLDER = "Current_folder";
     private Notes currentFolder;
@@ -39,13 +39,19 @@ public class NotesFolders extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         currentFolder = new Notes(0);
-        String[] data = getResources().getStringArray(R.array.Folders);
+        String[] data = getData();
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         notesFolderAdapter = new NotesFolderAdapter();
         recyclerView.setAdapter(notesFolderAdapter);
         notesFolderAdapter.setData(data);
+        notesFolderAdapter.setOnClickItemListener(this);
         recyclerView.setHasFixedSize(true);
         initAddFolderButton(view);
+    }
+
+    private String[] getData() {
+        String[] data = getResources().getStringArray(R.array.Folders);
+        return data;
     }
 
     private void initAddFolderButton(@NonNull View view) {
@@ -59,6 +65,12 @@ public class NotesFolders extends Fragment {
                     Toast.makeText(requireContext(), "Cancel", Toast.LENGTH_SHORT).show();
 
                 }).show());
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        String [] data = getData();
+        Toast.makeText(requireContext(), data[position] + "'re opened!", Toast.LENGTH_SHORT).show();
     }
 }
 

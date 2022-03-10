@@ -10,10 +10,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class NotesFolderAdapter extends RecyclerView.Adapter<NotesFolderAdapter.MyViewHolder> {
     private String[] data;
+    OnClickItemListener onClickItemListener;
 
     public void setData(String[] data) {
         this.data = data;
         notifyDataSetChanged();
+    }
+    public void setOnClickItemListener(OnClickItemListener onClickItemListener) {
+        this.onClickItemListener = onClickItemListener;
     }
     NotesFolderAdapter(){
     }
@@ -44,6 +48,15 @@ public class NotesFolderAdapter extends RecyclerView.Adapter<NotesFolderAdapter.
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = (TextView) itemView;
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (onClickItemListener != null){
+                        onClickItemListener.onItemClick(getAdapterPosition());
+                    }
+
+                }
+            });
         }
 
         public void bindContentWithLayout(String content) {
