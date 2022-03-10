@@ -1,4 +1,4 @@
-package com.example.notes_lesson_6;
+package com.example.notes_lesson_6.ui;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.notes_lesson_6.R;
+
 public class NotesFolderAdapter extends RecyclerView.Adapter<NotesFolderAdapter.MyViewHolder> {
     private String[] data;
     OnClickItemListener onClickItemListener;
@@ -16,14 +18,18 @@ public class NotesFolderAdapter extends RecyclerView.Adapter<NotesFolderAdapter.
         this.data = data;
         notifyDataSetChanged();
     }
+
     public void setOnClickItemListener(OnClickItemListener onClickItemListener) {
         this.onClickItemListener = onClickItemListener;
     }
-    NotesFolderAdapter(){
+
+    NotesFolderAdapter() {
     }
-    NotesFolderAdapter(String[] data){
+
+    NotesFolderAdapter(String[] data) {
         this.data = data;
     }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -51,7 +57,7 @@ public class NotesFolderAdapter extends RecyclerView.Adapter<NotesFolderAdapter.
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (onClickItemListener != null){
+                    if (onClickItemListener != null) {
                         onClickItemListener.onItemClick(getAdapterPosition());
                     }
 

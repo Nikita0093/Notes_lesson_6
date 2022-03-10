@@ -1,9 +1,8 @@
-package com.example.notes_lesson_6;
+package com.example.notes_lesson_6.ui;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,6 +20,8 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
+
+import com.example.notes_lesson_6.R;
 
 public class NotesDescriptionChild extends Fragment {
     public static final String Args_Note_Names = "note_names";

@@ -1,4 +1,4 @@
-package com.example.notes_lesson_6;
+package com.example.notes_lesson_6.ui;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -1,4 +1,4 @@
-package com.example.notes_lesson_6;
+package com.example.notes_lesson_6.ui;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.notes_lesson_6.R;
 
 
 public class NotesNames extends Fragment {

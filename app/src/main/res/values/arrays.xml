@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="Folders">
+        <item>My Notes</item>
+        <item> My Passwords</item>
+    </string-array>
+
     <string-array name="Notes_Names">
         <item>Note One</item>
         <item>Note Two</item>
@@ -7,6 +12,7 @@
         <item>Note Four</item>
         <item>Note Five</item>
         <item>Note Six</item>
+        <item>Note Seven</item>
     </string-array>
 
     <string-array name="Notes_Description">
@@ -16,8 +22,19 @@
         <item>Note Info Four</item>
         <item>Note Info Five</item>
         <item>Note Info Six</item>
+        <item>Note Info Seven</item>
 
     </string-array>
 
+    <string-array name="Notes_Pictures">
+        <item>@drawable/nature1</item>
+        <item>@drawable/nature2</item>
+        <item>@drawable/nature3</item>
+        <item>@drawable/nature4</item>
+        <item>@drawable/nature5</item>
+        <item>@drawable/nature6</item>
+        <item>@drawable/nature7</item>
+
+    </string-array>
 
 </resources>
