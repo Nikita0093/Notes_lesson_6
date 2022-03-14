@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NotesNames">
+    tools:context=".ui.NotesNames">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/add_folder"
@@ -16,7 +16,7 @@
         android:gravity="center"
         android:text="ADD Folder"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:backgroundTint="@color/Toolbar"
         app:cornerRadius="90sp">
 

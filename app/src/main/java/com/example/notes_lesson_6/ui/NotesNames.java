@@ -1,20 +1,19 @@
-package com.example.notes_lesson_6;
+package com.example.notes_lesson_6.ui;
 
-import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.notes_lesson_6.R;
+import com.example.notes_lesson_6.repository.LocalRepositoryImpl;
 
 
 public class NotesNames extends Fragment implements OnItemClickListener {
@@ -48,7 +47,9 @@ public class NotesNames extends Fragment implements OnItemClickListener {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         noteNamesAdapter = new NoteNamesAdapter();
         recyclerView.setAdapter(noteNamesAdapter);
-        noteNamesAdapter.setData(data);
+        LocalRepositoryImpl localRepository = new LocalRepositoryImpl(requireContext().getResources());
+        localRepository.init();
+        noteNamesAdapter.setData(localRepository.init());
         noteNamesAdapter.setOnItemClickListener(this);
 
     }

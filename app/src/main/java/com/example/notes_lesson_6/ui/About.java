@@ -1,4 +1,4 @@
-package com.example.notes_lesson_6;
+package com.example.notes_lesson_6.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.notes_lesson_6.R;
 
 public class About extends Fragment {
     @Nullable

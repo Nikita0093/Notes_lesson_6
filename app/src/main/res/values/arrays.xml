@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="Notes_Names">
-        <item>Note One</item>
-        <item>Note Two</item>
-        <item>Note Three</item>
-        <item>Note Four</item>
-        <item>Note Five</item>
-        <item>Note Six</item>
-        <item>Note Seven</item>
-        <item>Note Eight</item>
-        <item>Note Nine</item>
-        <item>Note Ten</item>
-        <item>Note Eleven</item>
-        <item>Note Twelve</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
     </string-array>
 
     <string-array name="Notes_Description">
-        <item>Note Info One</item>
-        <item>Note Info Two</item>
-        <item>Note Info Three</item>
-        <item>Note Info Four</item>
-        <item>Note Info Five</item>
-        <item>Note Info Six</item>
-        <item>Note Info Seven</item>
-        <item>Note Info Eight</item>
-        <item>Note Info Nine</item>
-        <item>Note Info Ten</item>
-        <item>Note Info Eleven</item>
-        <item>Note Info Twelve</item>
+        <item>Monday Info</item>
+        <item>Tuesday Info</item>
+        <item>Wednesday Info</item>
+        <item>Thursday Info</item>
+        <item>Friday Info</item>
+        <item>Saturday Info</item>
+        <item>Sunday Info</item>
+
+    </string-array>
+
+    <string-array name="Notes_Pictures">
+        <item>@drawable/week1</item>
+        <item>@drawable/week2</item>
+        <item>@drawable/week3</item>
+        <item>@drawable/week4</item>
+        <item>@drawable/week5</item>
+        <item>@drawable/week6</item>
+        <item>@drawable/week7</item>
+
 
     </string-array>
 
