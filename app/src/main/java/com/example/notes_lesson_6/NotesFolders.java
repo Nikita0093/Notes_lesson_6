@@ -61,17 +61,17 @@ public class NotesFolders extends Fragment {
 
 
     private void initView(LinearLayout view) {
-        String[] noteNames = getResources().getStringArray(R.array.Folders);
-        for (int b = 0; b < noteNames.length; b++) {
-            String noteName = noteNames[b];
-            TextView textView = new TextView(getContext());
-            textView.setText(noteName);
-            textView.setTextSize(40f);
-            textView.setTextColor(getResources().getColor(R.color.white));
-            view.addView(textView);
-            popupMenuFolder(textView);
+        String[] noteFolders = getResources().getStringArray(R.array.Folders);
+        for (int b = 0; b < noteFolders.length; b++) {
+            String noteFolder = noteFolders[b];
+            TextView textViewFolder = new TextView(getContext());
+            textViewFolder.setText(noteFolder);
+            textViewFolder.setTextSize(40f);
+            textViewFolder.setTextColor(getResources().getColor(R.color.white));
+            view.addView(textViewFolder);
+            popupMenuFolder(textViewFolder);
             final int finalA = b;
-            textView.setOnClickListener(new View.OnClickListener() {
+            textViewFolder.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     currentFolder = new Notes(finalA);
