@@ -17,9 +17,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class NotesNames extends Fragment {
+public class NotesNames extends Fragment implements OnItemClickListener {
     public static final String CURRENT_NOTE = "Current_note";
     private Notes currentNote;
+    NoteNamesAdapter noteNamesAdapter;
+
 
     public static NotesNames newInstance() {
         NotesNames fragment = new NotesNames();
@@ -42,12 +44,24 @@ public class NotesNames extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        String[] data = getResources().getStringArray(R.array.Notes_Names);
+        String[] data = getData();
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-        NoteNamesAdapter noteNamesAdapter = new NoteNamesAdapter();
+        noteNamesAdapter = new NoteNamesAdapter();
         recyclerView.setAdapter(noteNamesAdapter);
         noteNamesAdapter.setData(data);
+        noteNamesAdapter.setOnItemClickListener(this);
 
+    }
+
+    private String[] getData() {
+        String[] data = getResources().getStringArray(R.array.Notes_Names);
+        return data;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        String [] data = getData();
+        Toast.makeText(requireContext(), data[position] + "'re opened", Toast.LENGTH_SHORT).show();
     }
 }
 

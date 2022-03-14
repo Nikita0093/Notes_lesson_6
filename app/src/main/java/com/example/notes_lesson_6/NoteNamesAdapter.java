@@ -10,6 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class NoteNamesAdapter extends RecyclerView.Adapter<NoteNamesAdapter.MyViewHolder> {
     private String[] data;
+    OnItemClickListener onItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
 
     public void setData(String[] data) {
         this.data = data;
@@ -47,6 +52,15 @@ public class NoteNamesAdapter extends RecyclerView.Adapter<NoteNamesAdapter.MyVi
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = (TextView) itemView;
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (onItemClickListener != null){
+                        onItemClickListener.onItemClick(getLayoutPosition());
+
+                    }
+                }
+            });
         }
 
         public void bindContentWithLayout(String content) {
