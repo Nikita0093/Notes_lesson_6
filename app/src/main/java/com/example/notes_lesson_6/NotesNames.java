@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,7 +42,28 @@ public class NotesNames extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        if (savedInstanceState != null) {
+        String[] data = getResources().getStringArray(R.array.Notes_Names);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        NoteNamesAdapter noteNamesAdapter = new NoteNamesAdapter();
+        recyclerView.setAdapter(noteNamesAdapter);
+        noteNamesAdapter.setData(data);
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*if (savedInstanceState != null) {
             currentNote = savedInstanceState.getParcelable(CURRENT_NOTE);
         } else {
             currentNote = new Notes(0);
@@ -99,3 +121,5 @@ public class NotesNames extends Fragment {
         getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.Description, notes_Description).commit();
     }
 }
+
+         */

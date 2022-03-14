@@ -6,6 +6,13 @@
         <item>Note Three</item>
         <item>Note Four</item>
         <item>Note Five</item>
+        <item>Note Six</item>
+        <item>Note Seven</item>
+        <item>Note Eight</item>
+        <item>Note Nine</item>
+        <item>Note Ten</item>
+        <item>Note Eleven</item>
+        <item>Note Twelve</item>
     </string-array>
 
     <string-array name="Notes_Description">
@@ -14,6 +21,13 @@
         <item>Note Info Three</item>
         <item>Note Info Four</item>
         <item>Note Info Five</item>
+        <item>Note Info Six</item>
+        <item>Note Info Seven</item>
+        <item>Note Info Eight</item>
+        <item>Note Info Nine</item>
+        <item>Note Info Ten</item>
+        <item>Note Info Eleven</item>
+        <item>Note Info Twelve</item>
 
     </string-array>
 
