@@ -25,23 +25,18 @@
 
         <FrameLayout
             android:id="@+id/Names"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="55sp"
-            android:layout_weight="1">
+            android:layout_gravity="center"
+            android:layout_marginEnd="100sp"
+            android:layout_marginStart="100sp">
 
         </FrameLayout>
 
-        <FrameLayout
-            android:id="@+id/Description"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="55sp"
-            android:layout_weight="1">
-
-        </FrameLayout>
 
     </LinearLayout>
 
 
 </FrameLayout>
+
