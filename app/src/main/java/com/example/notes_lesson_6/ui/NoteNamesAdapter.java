@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.notes_lesson_6.R;
@@ -17,6 +18,12 @@ import com.example.notes_lesson_6.repository.CardSource;
 public class NoteNamesAdapter extends RecyclerView.Adapter<NoteNamesAdapter.MyViewHolder> {
     private CardSource cardSource;
     OnItemClickListener onItemClickListener;
+    Fragment fragment;
+    private int menuPosition;
+
+    public int getMenuPosition() {
+        return menuPosition;
+    }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
@@ -32,6 +39,11 @@ public class NoteNamesAdapter extends RecyclerView.Adapter<NoteNamesAdapter.MyVi
     }
 
     NoteNamesAdapter() {
+    }
+
+    NoteNamesAdapter(Fragment fragment) {
+        this.fragment = fragment;
+
     }
 
     @NonNull
@@ -64,6 +76,21 @@ public class NoteNamesAdapter extends RecyclerView.Adapter<NoteNamesAdapter.MyVi
             textViewDescription = (TextView) itemView.findViewById(R.id.cardViewNoteDescription);
             imageView = (ImageView) itemView.findViewById(R.id.CardViewImage);
             checkBox = (CheckBox) itemView.findViewById(R.id.cardViewLike);
+
+
+
+            itemView.setOnLongClickListener(view -> {
+                menuPosition = getLayoutPosition();
+                return false;
+            });
+
+            imageView.setOnLongClickListener(view -> {
+                menuPosition = getLayoutPosition();
+                //view.showContextMenu(250, 200);
+                return false;
+            });
+            fragment.registerForContextMenu(itemView);
+
 
 
             /*textView.setOnClickListener(new View.OnClickListener() {

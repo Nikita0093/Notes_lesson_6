@@ -8,6 +8,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -52,7 +53,7 @@ public class NotesNames extends Fragment implements OnItemClickListener {
         super.onViewCreated(view, savedInstanceState);
         String[] data = getData();
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-        noteNamesAdapter = new NoteNamesAdapter();
+        noteNamesAdapter = new NoteNamesAdapter(this);
         recyclerView.setAdapter(noteNamesAdapter);
         cardSource = new LocalRepositoryImpl(requireContext().getResources()).init();
         noteNamesAdapter.setData(cardSource);
@@ -76,6 +77,39 @@ public class NotesNames extends Fragment implements OnItemClickListener {
                 }).show());
 
 
+    }
+
+    @Override
+    public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v, @Nullable ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        requireActivity().getMenuInflater().inflate(R.menu.note_name_card_menu, menu);
+
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        int menuPosition = new NoteNamesAdapter().getMenuPosition();
+        switch (item.getItemId()) {
+
+
+            case (R.id.action_menuNoteNameCard_delete):{
+                cardSource.deleteCardData(menuPosition);
+                noteNamesAdapter.notifyItemRemoved(menuPosition);
+
+
+
+                return true;
+
+
+            }
+            case (R.id.action_menuNoteNameCard_update):{
+
+
+
+             return true;
+            }
+        }
+        return super.onContextItemSelected(item);
     }
 
     @Override
